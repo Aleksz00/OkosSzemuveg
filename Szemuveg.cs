@@ -17,24 +17,8 @@ namespace OkosSzemuveg
         public int Uzemido { get; set; }
         public double Centi() => Kijelzomeret * 2.54;
         public int Tar() => int.Parse(Tarhelymeret.Split(" ")[0]);
+        public string[] szenzorok => Szenzorokfel.Split(",");
         public int szenzor() => Szenzorokfel.Split(",").Length;
-
-        public List<string> RendezettSzenzorok()
-        {
-            var szenzorLista = Szenzorokfel.Split(',').Select(szenzor =>{switch (szenzor.Trim().ToLower()){
-                        case "gyroscope":
-                        case "giroszkóp":
-                            return "gyroszkóp";
-                        case "accelerometer":
-                            return "gyorsulásmérő";
-                        default:
-                            return szenzor.Trim();
-                    }
-                }).Distinct().OrderBy(szenzor => szenzor).ToList();
-
-            return szenzorLista;
-        }
-
         public Szemuveg(string s)
         {
             string [] a = s.Split(";");
@@ -48,9 +32,7 @@ namespace OkosSzemuveg
            
 
         }
-
-        public override string ToString() => $"Sorszam: {Sorszam}, Kijelzomeret: {Kijelzomeret} Processzortelj: {Procteljesitmeny} KameraFel: {KameraFelb}" +
-            $"Szenzorok: {Szenzorokfel} Tarhelymeret: {Tarhelymeret} Uzemidő: {Uzemido}";
+        public override string ToString() => $"{Sorszam},  |  {Kijelzomeret}  |  {Procteljesitmeny}  |  {KameraFelb}  |  {Szenzorokfel}  |  {Tarhelymeret}  |  {Uzemido}";
         
     }
 }

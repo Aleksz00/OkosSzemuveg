@@ -1,8 +1,8 @@
-Sorszam: 4., Kijelzomeret: 5,7 Processzortelj: 2,4 KameraFel: 18Szenzorok: accelerometer,giroszkóp,fényérzékelő Tarhelymeret: 256 GB Uzemidő: 24
-Sorszam: 10., Kijelzomeret: 5,5 Processzortelj: 2 KameraFel: 12Szenzorok: accelerometer,pulzusmérő,fényérzékelő Tarhelymeret: 64 GB Uzemidő: 20
-Sorszam: 11., Kijelzomeret: 6,2 Processzortelj: 2,5 KameraFel: 16Szenzorok: fényérzékelő,giroszkóp,hőmérséklet-érzékelő Tarhelymeret: 256 GB Uzemidő: 18
-Sorszam: 12., Kijelzomeret: 5,8 Processzortelj: 2,2 KameraFel: 14Szenzorok: accelerometer,fényérzékelő,touchpad-érzékelő Tarhelymeret: 1 TB Uzemidő: 22
-Sorszam: 14., Kijelzomeret: 5,7 Processzortelj: 2,4 KameraFel: 18Szenzorok: accelerometer,giroszkóp,fényérzékelő Tarhelymeret: 256 GB Uzemidő: 24
-Sorszam: 19., Kijelzomeret: 6,3 Processzortelj: 2,4 KameraFel: 18Szenzorok: giroszkóp,fényérzékelő,szívritmus-érzékelő Tarhelymeret: 256 GB Uzemidő: 25
-Sorszam: 24., Kijelzomeret: 5,7 Processzortelj: 2,4 KameraFel: 18Szenzorok: accelerometer,giroszkóp,fényérzékelő Tarhelymeret: 128 GB Uzemidő: 24
-Sorszam: 29., Kijelzomeret: 6,3 Processzortelj: 2,4 KameraFel: 18Szenzorok: giroszkóp,fényérzékelő,hőmérséklet-érzékelő Tarhelymeret: 1 TB Uzemidő: 25
+4.,  |  5,7  |  2,4  |  18  |  accelerometer,giroszkóp,fényérzékelő  |  256 GB  |  24
+10.,  |  5,5  |  2  |  12  |  accelerometer,pulzusmérő,fényérzékelő  |  64 GB  |  20
+11.,  |  6,2  |  2,5  |  16  |  fényérzékelő,giroszkóp,hőmérséklet-érzékelő  |  256 GB  |  18
+12.,  |  5,8  |  2,2  |  14  |  accelerometer,fényérzékelő,touchpad-érzékelő  |  1 TB  |  22
+14.,  |  5,7  |  2,4  |  18  |  accelerometer,giroszkóp,fényérzékelő  |  256 GB  |  24
+19.,  |  6,3  |  2,4  |  18  |  giroszkóp,fényérzékelő,szívritmus-érzékelő  |  256 GB  |  25
+24.,  |  5,7  |  2,4  |  18  |  accelerometer,giroszkóp,fényérzékelő  |  128 GB  |  24
+29.,  |  6,3  |  2,4  |  18  |  giroszkóp,fényérzékelő,hőmérséklet-érzékelő  |  1 TB  |  25

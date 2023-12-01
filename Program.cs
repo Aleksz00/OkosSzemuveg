@@ -1,4 +1,6 @@
-﻿namespace OkosSzemuveg
+﻿using System.Threading.Channels;
+
+namespace OkosSzemuveg
 {
     internal class Program
     {
@@ -18,11 +20,6 @@
             var f10 = c.Where(x => x.Tar() < 100).ToList();
             return f10;
         }
-        static List<Szemuveg> szenzorok(List<Szemuveg> g)
-        {
-            var f10 = g.OrderBy(x => x.Szenzorokfel).ToList().Distinct();
-            return f10.ToList();
-        }
         static List<Szemuveg> TB(List<Szemuveg> d)
 
         {
@@ -33,6 +30,45 @@
         {
             var f13 = e.Where(x => x.szenzor() >=3).ToList();
             return f13;
+        }
+        static List<string> szenzorokred(List<Szemuveg> g)
+        {
+            var f11 = g.SelectMany(x => x.szenzorok).
+                Select(x => (x == "accelerometer") ? "gyorsulásmérő" : x).
+                Select(x => (x == "gyroscope") ? "giroszkóp" : x).OrderBy(x => x).Distinct().ToList();
+
+            return f11;
+        }
+        static List<string> hagyomany(List<Szemuveg> h)
+        {
+            List<string> szenzorlista = new(); 
+            for (int i = 0; i < h.Count; i++)
+            {
+                for (int a = 0; a < h[i].szenzorok.Length; a++)
+                {
+                    if (h[i].szenzorok[a] == "accelerometer")
+                    {
+                        szenzorlista.Add("gyorsulásmérő");
+                    }
+                    else
+                    {
+                        
+                        if (h[i].szenzorok[a] == "gyroscope")
+                        {
+                           szenzorlista.Add( "giroszkóp");
+                        }
+                        else
+                        {
+                            szenzorlista.Add(h[i].szenzorok[a]);
+                        }
+                    }
+
+                }
+
+            }
+            szenzorlista.Sort();
+
+            return szenzorlista.Distinct().ToList();
         }
         static void Main(string[] args)
         {
@@ -45,9 +81,7 @@
                     szemuvegek.Add(new Szemuveg(sr.ReadLine()));
                 }
             }
-
             szemuvegek.ForEach(c => Console.WriteLine(c));
-
             Console.WriteLine("7.feladat");
             kamera(szemuvegek).ForEach(c => Console.WriteLine(c));
             Console.WriteLine($"{kamera(szemuvegek).Count} db");
@@ -62,7 +96,9 @@
             Console.WriteLine("10.feladat");
             tarhely(szemuvegek).ForEach(c => Console.WriteLine($"{c.Sorszam} sorszám, {c.Tar()} cm"));
             Console.WriteLine("11.feladat");
-            szemuvegek.ForEach(c => Console.WriteLine(string.Join(",", c.RendezettSzenzorok())));
+            szenzorokred(szemuvegek).ForEach(c => Console.WriteLine(c));
+            Console.WriteLine("2.megoldas");
+            hagyomany(szemuvegek).ForEach(c => Console.WriteLine(c));
             Console.WriteLine("12.feladat");
             TB(szemuvegek).ForEach(c => Console.WriteLine(c));
             Console.WriteLine("13.feladat");
